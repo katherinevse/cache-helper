@@ -1,0 +1,8 @@
+redis:
+  addr: "${REDIS_ADDR}"
+  password: "${REDIS_PASS}"
+  db: "${REDIS_DB}"
+
+logger:
+  level: "debug" # "info", "error"
+
