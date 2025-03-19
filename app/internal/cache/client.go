@@ -39,6 +39,7 @@ func (r *RedisCacheClient) Set(ctx context.Context, key string, value interface{
 	if err != nil {
 		return err
 	}
+
 	return nil
 
 }
