@@ -4,6 +4,7 @@ import (
 	"app/app/internal/cache"
 	"app/app/internal/config"
 	"github.com/redis/go-redis/v9"
+	"golang.org/x/net/context"
 	"log"
 )
 
@@ -13,17 +14,16 @@ func main() {
 		log.Fatalf("Ошибка конфигурации: %v", err)
 	}
 
-	//TODO : Инициализация логгера
-	//logg, err := logger.New(cfg.LoggerConfig)
-	//if err != nil {
-	//	log.Fatalf("Ошибка логгера: %v", err)
-	//}
+	redisClient := redis.NewClient(&redis.Options{
+		Addr:     cfg.RedisCfg.Addr,
+		Password: cfg.RedisCfg.Password,
+		DB:       cfg.RedisCfg.DB,
+	})
 
-	redisClient := redis.Client{}
-	//redisClient.Set()
-	//redis.SearchStdDev
-	//redisClient.Del()
+	if err = redisClient.Ping(context.Background()).Err(); err != nil {
+		log.Fatalf("Не удалось подключиться к Redis: %v", err)
+	}
 
-	rediska := cache.NewClient(cfg.RedisCfg, redisClient)
+	cache := cache.NewClient(redisClient)
 
 }
