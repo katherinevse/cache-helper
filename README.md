@@ -23,3 +23,8 @@
 go get github.com/go-redis/redis/v8
 
 docker run --name redis -p 6379:6379 -d redis
+
+.env:
+REDIS_ADDR= string
+REDIS_DB= int
+REDIS_PASS= string
