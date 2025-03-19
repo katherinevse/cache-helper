@@ -3,8 +3,8 @@ package main
 import (
 	"app/app/internal/cache"
 	"app/app/internal/config"
+	"context"
 	"github.com/redis/go-redis/v9"
-	"golang.org/x/net/context"
 	"log"
 )
 
