@@ -1,8 +1,8 @@
 package main
 
 import (
-	"app/app/internal/cache"
-	"app/app/internal/config"
+	"app/internal/cache"
+	"app/internal/config"
 	"context"
 	"github.com/redis/go-redis/v9"
 	"log"
