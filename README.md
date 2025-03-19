@@ -15,16 +15,14 @@
 2. Если данные есть — возвращает их.
 3. Если данных нет — генерирует их, сохраняет в кэш и возвращает пользователю.
 
-## Установка
-
-Для начала работы с **Cache-Helper**, вам нужно установить библиотеку `go-redis`, которая используется для работы с Redis:
-
 ```bash
 go get github.com/go-redis/redis/v8
-
 docker run --name redis -p 6379:6379 -d redis
 
 .env:
 REDIS_ADDR= string
 REDIS_DB= int
 REDIS_PASS= string
+
+прометей,графана
+
